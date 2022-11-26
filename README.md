@@ -7,3 +7,6 @@
 ## Start app
 <code>npm install</code>
 <code>npm start</code>
+
+## Make app
+<code>npm run make</code>
