@@ -1,0 +1,23 @@
+{
+  "name": "pc-miner",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eth3-peth/pc-miner.git"
+  },
+  "author": "Fleming",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eth3-peth/pc-miner/issues"
+  },
+  "homepage": "https://github.com/eth3-peth/pc-miner#readme",
+  "devDependencies": {
+    "electron": "^21.3.1"
+  }
+}
