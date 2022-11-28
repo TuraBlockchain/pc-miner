@@ -15,39 +15,45 @@
   </head>
   <body>
 
-    <div class="ui menu">
-      <div class="header item">
-        PETH
+    <div class="ui top attached menu">
+      <a class="item">
+        <i class="sidebar icon"></i>
+        Menu
+      </a>
+    </div>
+    <div class="ui bottom attached segment">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <a class="item active">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <a class="item">
+          <i class="block layout icon"></i>
+          Topics
+        </a>
+        <a class="item">
+          <i class="smile icon"></i>
+          Friends
+        </a>
+        <a class="item">
+          <i class="calendar icon"></i>
+          History
+        </a>
       </div>
-      <a class="item">
-        Menu 1
-      </a>
-      <a class="item">
-        Menu 2
-      </a>
-      <a class="item">
-        Menu 3
-      </a>
-      <div class="right menu">
-        <div class="header item">
-          Menu 4
+      <div class="pusher">
+        <div class="ui basic segment">
+          <h1 class="ui header">Hello peth</h1>
+          <div class="ui segment">
+            <p>
+              We are using Node.js <span id="node-version"></span>,
+              Chromium <span id="chrome-version"></span>,
+              and Electron <span id="electron-version"></span>.
+              and Semantic 1.12.2
+            </p>
+          </div>
         </div>
-        <a class="item">
-          Menu 5
-        </a>
-        <a class="item">
-          Menu 6
-        </a>
       </div>
     </div>
-
-    <h1 class="ui header">Hello peth</h1>
-    <h2 class="ui header">
-      We are using Node.js <span id="node-version"></span>,
-      Chromium <span id="chrome-version"></span>,
-      and Electron <span id="electron-version"></span>.
-      and Semantic 1.12.2
-    </h2>
 
     <script src="./renderer.js"></script>
   </body>
