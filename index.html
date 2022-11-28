@@ -5,16 +5,50 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
     <title>peth pc miner</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="semantic/semantic.js"></script>
   </head>
   <body>
-    <h1>Hello peth</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- 您也可以此进程中运行其他文件 -->
+    <div class="ui menu">
+      <div class="header item">
+        PETH
+      </div>
+      <a class="item">
+        Menu 1
+      </a>
+      <a class="item">
+        Menu 2
+      </a>
+      <a class="item">
+        Menu 3
+      </a>
+      <div class="right menu">
+        <div class="header item">
+          Menu 4
+        </div>
+        <a class="item">
+          Menu 5
+        </a>
+        <a class="item">
+          Menu 6
+        </a>
+      </div>
+    </div>
+
+    <h1 class="ui header">Hello peth</h1>
+    <h2 class="ui header">
+      We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+      and Semantic 1.12.2
+    </h2>
+
     <script src="./renderer.js"></script>
   </body>
 </html>
