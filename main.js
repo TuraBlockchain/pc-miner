@@ -20,7 +20,7 @@ const createWindow = () => {
   menu.setApplicationMenu(null)
 
   // load index.html
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./src/home/home.html')
 
   // open chrome dev tools like F12
   mainWindow.webContents.openDevTools()
