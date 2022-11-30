@@ -1,7 +1,7 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const electron = require('electron')
 const menu = electron.Menu
@@ -24,6 +24,11 @@ const createWindow = () => {
 
   // open chrome dev tools like F12
   mainWindow.webContents.openDevTools()
+
+  // page change event
+  ipcMain.on('page-change', (event, arg) => {
+    mainWindow.loadFile('./src/'+ arg +'/' + arg + '.html');
+  });
 }
 
 // Code under will init after createWindow
