@@ -6,19 +6,27 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-    <title>peth pc miner</title>
+    <title>PETH-ETH3</title>
 
     <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script src="semantic/semantic.js"></script>
+    <style>
+      .maincontain {
+        padding: 2%;
+      }
+      .ui.inverted.menu .active.item {
+        background: #DBB090 !important;
+      }
+    </style>
   </head>
   <body>
 
     <div class="ui top attached menu">
       <a class="item">
         <i class="sidebar icon"></i>
-        Menu
+        Home
       </a>
     </div>
     <div class="ui bottom attached segment">
@@ -28,30 +36,44 @@
           Home
         </a>
         <a class="item">
-          <i class="block layout icon"></i>
-          Topics
+          <i class="play icon"></i>
+          Mining
         </a>
         <a class="item">
-          <i class="smile icon"></i>
-          Friends
+          <i class="exchange icon"></i>
+          Transactions
         </a>
         <a class="item">
-          <i class="calendar icon"></i>
-          History
+          <i class="area chart icon"></i>
+          Plotting
+        </a>
+        <a class="item">
+          <i class="list layout icon"></i>
+          Commitment
+        </a>
+        <a class="item">
+          <i class="setting icon"></i>
+          Settings
         </a>
       </div>
-      <div class="pusher">
-        <div class="ui basic segment">
-          <h1 class="ui header">Hello peth</h1>
-          <div class="ui segment">
-            <p>
-              We are using Node.js <span id="node-version"></span>,
-              Chromium <span id="chrome-version"></span>,
-              and Electron <span id="electron-version"></span>.
-              and Semantic 1.12.2
-            </p>
+      <div class="pusher maincontain">
+
+        <div class="ui equal width grid">
+          <div class="row">
+            <div class="column">
+              <div class="ui segment">1</div>
+            </div>
+            <div class="column">
+              <div class="ui segment">2</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="ui segment">1</div>
+            </div>
           </div>
         </div>
+        
       </div>
     </div>
 
