@@ -2,12 +2,12 @@
 
 ## Project env
 
-*node* version v16.17.0
-*npm* version v8.19.2
-*vue* version v3.2.13
-*vue-router* version v4.1.6
-*vuetify* version v3.0.0-beta.0
-*Electron* version v13.0.0
+*node* version v16.17.0 \
+*npm* version v8.19.2 \
+*vue* version v3.2.13 \
+*vue-router* version v4.1.6 \
+*vuetify* version v3.0.0-beta.0 \
+*Electron* version v13.0.0 \
 *electron-builder* version v2.1.1
 
 ## Project setup
