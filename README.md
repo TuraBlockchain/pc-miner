@@ -1,18 +1,37 @@
-# pcm
+# pc-miner-electron-vue
+
+## Project env
+
+*node* version v16.17.0
+*npm* version v8.19.2
+*vue* version v3.2.13
+*vue-router* version v4.1.6
+*Electron* version v13.0.0
+*electron-builder* version v2.1.1
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development (web)
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compiles and hot-reloads for development (app)
+```
+npm run electron:serve
+```
+
+### Compiles and minifies for production (web)
 ```
 npm run build
+```
+
+### Compiles and minifies for production (app)
+```
+npm run electron:build
 ```
 
 ### Lints and fixes files
