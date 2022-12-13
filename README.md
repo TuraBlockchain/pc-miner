@@ -1,12 +1,24 @@
-# pc-miner
+# pcm
 
-*node* version v18.12.1 \
-*npm* version 8.19.2 \
-*Electron* version 21.3.1
+## Project setup
+```
+npm install
+```
 
-## Start app
-<code>npm install</code>
-<code>npm start</code>
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## Make app
-<code>npm run make</code>
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
