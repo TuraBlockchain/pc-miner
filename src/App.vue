@@ -1,19 +1,17 @@
 <template>
   <v-app>
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+    <PCMRoot/>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PCMRoot from './components/PCMRoot';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    PCMRoot,
   },
 
   data: () => ({
