@@ -2,10 +2,13 @@
   <div>
     <v-navigation-drawer permanent>
       <v-list nav>
-        <v-list-item v-for="item in sidebarItems" :prepend-icon="item.icon" :title="item.value" :value="item.value" :key="item.value" @click="itemOnClick(item.value)"></v-list-item>
+        <v-list-item v-for="item in sidebarItems" :prepend-icon="item.icon" :title="item.value" :value="item.value" :key="item.value" 
+                    @click="itemOnClick(item.value)" :active="currentPage == item.value"></v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar>{{ appBarTitle }}</v-app-bar>
+    <v-app-bar>
+      <v-app-bar-title>{{ currentPage }}</v-app-bar-title>
+    </v-app-bar>
     <v-main>
       <v-card height="200px"></v-card>
     </v-main>
@@ -22,7 +25,7 @@ export default {
   },
   data() {
     return {
-      appBarTitle: "",
+      currentPage: "Home",
       sidebarItems: [
         { icon: 'mdi-home', value: 'Home'},
         { icon: 'mdi-pickaxe', value: 'Minning'},
@@ -35,10 +38,11 @@ export default {
   },
   methods: {
     itemOnClick(value) {
-      this.appBarTitle = value;
+      this.currentPage = value;
     }
   },
   mounted: function() {
+    this.currentPage = "Home";
   }
 };
 </script>
