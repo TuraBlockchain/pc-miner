@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-layout>
     <PCMRoot/>
-  </v-app>
+  </v-layout>
 </template>
 
 <script>
