@@ -2,6 +2,15 @@
   <div>
     <v-navigation-drawer permanent>
       <v-list nav>
+
+        <v-list-item
+          lines="two"
+          title="PETH-ETH3"
+          subtitle="PC Minner"
+        ></v-list-item>
+
+        <v-divider></v-divider>
+
         <v-list-item v-for="item in sidebarItems" :prepend-icon="item.icon" :title="item.value" :value="item.value" :key="item.value" 
                     @click="itemOnClick(item.value)" :active="currentPage == item.value"></v-list-item>
       </v-list>
