@@ -19,18 +19,25 @@
       <v-app-bar-title>{{ currentPage }}</v-app-bar-title>
     </v-app-bar>
     <v-main>
-      <v-card height="200px"></v-card>
+      <HomeView />
     </v-main>
   </div>
 </template>
 <style scoped>
+  .viewBox {
+    width: 100%;
+    border: 1px solid red;
+  }
 </style>
 
 <script>
 
+import HomeView from "./view/HomeView";
+
 export default {
   name: "PCMRoot",
   components: {
+    HomeView,
   },
   data() {
     return {
