@@ -23,10 +23,9 @@
     </v-main>
   </div>
 </template>
-<style scoped>
-  .viewBox {
-    width: 100%;
-    border: 1px solid red;
+<style>
+  .v-layout {
+    display: block;
   }
 </style>
 
