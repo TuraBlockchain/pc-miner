@@ -8,8 +8,8 @@
                             <v-card-title>Profile</v-card-title>
                         </v-card-item>
                         <v-card-item>
-                            <v-card-title class="profileSubTitle">Account ID: <span>TS-GFK9-AM6N-D5CG-3WTJ3</span><v-icon icon="mdi-content-copy" class="copyIcon"></v-icon></v-card-title>
-                            <v-card-title class="profileSubTitle">Numeric ID: <span>1207875391197754919</span> <v-icon icon="mdi-content-copy" class="copyIcon"></v-icon></v-card-title>
+                            <v-card-title class="profileSubTitle">Account ID: <span>{{ accountData.accountRS }}</span><v-icon icon="mdi-content-copy" class="copyIcon"></v-icon></v-card-title>
+                            <v-card-title class="profileSubTitle">Numeric ID: <span>{{ accountData.account }}</span> <v-icon icon="mdi-content-copy" class="copyIcon"></v-icon></v-card-title>
                         </v-card-item>
                     </v-card>
                 </v-col>
@@ -20,8 +20,8 @@
                             <v-card-title>Current Balance</v-card-title>
                         </v-card-item>
                         <v-card-text class="cardNumBox">
-                            <span class="cardNumInteger">12313</span>
-                            <span class="cardNumDecimal">.3242</span>
+                            <span class="cardNumInteger">{{ accountData.balanceNQT }}</span>
+                            <span class="cardNumDecimal"></span>
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -33,8 +33,8 @@
                             <v-card-title>Committed Balance</v-card-title>
                         </v-card-item>
                         <v-card-text class="cardNumBox">
-                            <span class="cardNumInteger">12313</span>
-                            <span class="cardNumDecimal">.3242</span>
+                            <span class="cardNumInteger">{{ accountData.committedBalanceNQT }}</span>
+                            <span class="cardNumDecimal"></span>
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -75,17 +75,48 @@
 
 <script>
 
+const axios = require('axios');
+
 export default {
     name: "HomeView",
     components: {
     },
     data() {
         return {
+            accountData: {
+                "accountRS": "",
+                "account": "",
+                "balanceNQT": "",
+                "committedBalanceNQT": ""
+            },
+
         };
     },
     methods: {
+        async init() {
+            var accountRes = await this.getAccoutData("1207875391197754919");
+            if (accountRes.value) {
+                this.accountData = accountRes.value
+            }
+        },
+        getAccoutData(numID) {
+            return new Promise((resolve)=> {
+                axios.get("/apis/burst?requestType=getAccount&account=" + numID + "&getCommittedAmount=true&_=1671952920334").then(res => {
+                    if (res.data) {
+                        resolve({value: res.data});
+                    } else {
+                        resolve({value: ""});
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error)
+                    resolve({value: ""})
+                });
+            })
+        },
     },
     mounted: function() {
+        this.init();
     }
 };
 </script>
