@@ -27,6 +27,9 @@
   .v-layout {
     display: block;
   }
+  .view-container {
+    max-width: 100% !important;
+  }
 </style>
 
 <script>
