@@ -11,6 +11,7 @@
                 </v-card-text>
 
                 <v-text-field
+                    v-model="passphrasesInputValue"
                     class="passphrases-input"
                     label="Passphrases"
                     required
@@ -20,7 +21,8 @@
                     class="add-account-btn"
                     size="large"
                     type="submit"
-                    variant="elevated">
+                    variant="elevated"
+                    @click="this.$emit('addAccountOnClick', this.passphrasesInputValue)">
                     Add Account
                 </v-btn>
                 <br/>
@@ -73,6 +75,7 @@ export default {
     },
     data() {
         return {
+            passphrasesInputValue: "",
         }
     },
     methods: {

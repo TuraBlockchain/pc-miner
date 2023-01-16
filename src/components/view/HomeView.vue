@@ -52,7 +52,8 @@
             the web version does not have this problem -->
         <AddAccountDialog 
             v-if="addAccountDialog"
-            @backHome="addAccountDialog = false" />
+            @backHome="addAccountDialog = false"
+            @addAccountOnClick="addAccountOnClick" />
     </div>
 </template>
 <style scoped>
@@ -67,6 +68,8 @@
 <script>
 
 import AddAccountDialog from "./module/AddAccountDialog";
+
+import db from "../../plugins/fsdb.js"
 
 const axios = require('axios');
 
@@ -109,8 +112,14 @@ export default {
                 });
             })
         },
+        addAccountOnClick(passphrases) {
+            console.log(passphrases)
+        }
     },
     mounted: function() {
+
+        db.writeData("123","123")
+
         this.init();
     }
 };
