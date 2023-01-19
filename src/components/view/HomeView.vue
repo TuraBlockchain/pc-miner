@@ -69,14 +69,11 @@
 
 import AddAccountDialog from "./module/AddAccountDialog";
 
-import db from "../../plugins/fsdb.js"
-
 const axios = require('axios');
 
 export default {
     name: "HomeView",
     components: {
-        AddAccountDialog,
     },
     data() {
         return {
