@@ -74,6 +74,7 @@ const axios = require('axios');
 export default {
     name: "HomeView",
     components: {
+        AddAccountDialog,
     },
     data() {
         return {
@@ -114,10 +115,6 @@ export default {
         }
     },
     mounted: function() {
-
-        db.writeData("123","123")
-
-        this.init();
     }
 };
 </script>
