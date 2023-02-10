@@ -70,6 +70,7 @@
 import AddAccountDialog from "./module/AddAccountDialog";
 
 const axios = require('axios');
+const settings = require('electron-settings')
 
 export default {
     name: "HomeView",
@@ -86,6 +87,7 @@ export default {
                 "committedBalanceNQT": ""
             },
             addAccountDialog: false,
+            passphrasesList: []
         };
     },
     methods: {
@@ -94,6 +96,8 @@ export default {
             if (accountRes.value) {
                 this.accountData = accountRes.value
             }
+
+            this.passphrasesList = await settings.get("passphrases.list")
         },
         getAccoutData(numID) {
             return new Promise((resolve)=> {
@@ -110,11 +114,29 @@ export default {
                 });
             })
         },
-        addAccountOnClick(passphrases) {
-            console.log(passphrases)
+        async addAccountOnClick(passphrases) {
+
+            var passphrasesList = await settings.get("passphrases.list")
+            console.log(passphrasesList)
+
+            // local passphrasesList is undefind
+            if (!passphrasesList) {
+                await settings.set("passphrases", {list: [passphrases]})
+                return
+            }
+
+            // if content is duplicated
+            if (!passphrasesList.includes(passphrases)) {
+
+                passphrasesList.push(passphrases)
+                await settings.set("passphrases", {
+                    list: passphrasesList
+                })
+            }
         }
     },
     mounted: function() {
+        this.init()
     }
 };
 </script>
