@@ -73,6 +73,16 @@ export default {
     name: "AddAccountDialog",
     components: {
     },
+    props: {
+        resetDialog: {
+            type: Number,
+        }
+    },
+    watch: {
+        resetDialog: function() {
+            this.passphrasesInputValue = "";
+        }
+    },
     data() {
         return {
             passphrasesInputValue: "",

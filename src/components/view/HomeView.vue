@@ -52,8 +52,17 @@
             the web version does not have this problem -->
         <AddAccountDialog 
             v-if="addAccountDialog"
-            @backHome="addAccountDialog = false"
+            :resetDialog="resetDialog"
+            @backHome="backHomeOnClick"
             @addAccountOnClick="addAccountOnClick" />
+
+        <v-alert
+            class="AddAccountDialogAlert"
+            v-show="alertInfo.show"
+            :type="alertInfo.type"
+            :title="alertInfo.title"
+            :text="alertInfo.text"
+        ></v-alert>
     </div>
 </template>
 <style scoped>
@@ -62,6 +71,10 @@
     }
     .all-account-row {
         margin-top: 20px;
+    }
+    .AddAccountDialogAlert {
+        width: 60%;
+        margin: 20px auto;
     }
 </style>
 
@@ -87,7 +100,15 @@ export default {
                 "committedBalanceNQT": ""
             },
             addAccountDialog: false,
-            passphrasesList: []
+            passphrasesList: [],
+
+            alertInfo: {
+                show: false,
+                type: "",
+                title: "",
+                text: ""
+            },
+            resetDialog: null,
         };
     },
     methods: {
@@ -121,8 +142,7 @@ export default {
 
             // local passphrasesList is undefind
             if (!passphrasesList) {
-                await settings.set("passphrases", {list: [passphrases]})
-                return
+                passphrasesList = [];
             }
 
             // if content is duplicated
@@ -132,7 +152,27 @@ export default {
                 await settings.set("passphrases", {
                     list: passphrasesList
                 })
+
+                this.alertInfo = {
+                    show: true,
+                    type: "success",
+                    title: "Success",
+                    text: "Add Passphrases Success, Click Back To Go Back To the Home Or Continue To Add"
+                }
+                this.resetDialog = new Date().getTime()
+                return
             }
+
+            this.alertInfo = {
+                show: true,
+                type: "warning",
+                title: "Failed",
+                text: "Please Check Your Passphrases Then Add Again"
+            }
+        },
+        backHomeOnClick() {
+            this.addAccountDialog = false;
+            this.alertInfo.show = false;
         }
     },
     mounted: function() {
